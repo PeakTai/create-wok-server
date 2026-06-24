@@ -1,0 +1,25 @@
+{
+  "name": "wok-ui-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "check-format": "prettier --check \"src/**/*.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "less": "^4.6.4",
+    "prettier": "^3.8.3",
+    "tslib": "^2.8.1",
+    "vite": "^8.0.9"
+  },
+  "dependencies": {
+    "wok-ui": "^1.1.0"
+  }
+}

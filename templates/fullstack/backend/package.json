@@ -1,0 +1,26 @@
+{
+  "name": "wok-server-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/main.ts",
+    "build": "tsc --noEmit && esbuild src/main.ts --bundle --platform=node --target=node16 --outfile=app.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "check-format": "prettier --check \"src/**/*.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "dependencies": {
+    "wok-server": "^0.7.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.7",
+    "prettier": "^3.8.3",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.3.2"
+  }
+}

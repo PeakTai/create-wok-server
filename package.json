@@ -1,0 +1,40 @@
+{
+  "name": "create-wok-server",
+  "version": "0.1.0",
+  "description": "Create Wok Server project",
+  "author": "Peak Tai <peaktai@qq.com>",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "check-format": "prettier --check \"src/**/*.ts\""
+  },
+  "keywords": [
+    "wok-server",
+    "create-wok-server"
+  ],
+  "files": [
+    "dist/",
+    "src/",
+    "templates/",
+    "build.js"
+  ],
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^25.6.0",
+    "esbuild": "^0.28.0",
+    "prettier": "^3.8.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "bin": {
+    "create-wok-server": "./dist/cli.js"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.2",
+    "fs-extra": "^11.3.4"
+  }
+}
