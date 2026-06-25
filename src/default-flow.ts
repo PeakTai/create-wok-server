@@ -43,6 +43,9 @@ export async function runDefaultFlow(
       if (!usePnpm && src.endsWith('pnpm-lock.yaml')) {
         return false;
       }
+      if (src.endsWith('AGENTS.md')) {
+        return false;
+      }
       return true;
     }
   });
@@ -51,7 +54,10 @@ export async function runDefaultFlow(
 
   if (installSkills) {
     console.log(`\n${t.installingSkills}`);
-    if (!runCommand(SKILLS_COMMAND, projectPath)) {
+    if (runCommand(SKILLS_COMMAND, projectPath)) {
+      // 安装技能成功后，复制 AGENTS.md
+      await copy(join(templateRoot, 'AGENTS.md'), join(projectPath, 'AGENTS.md'));
+    } else {
       console.warn(`${t.installSkillsFailed}: ${SKILLS_COMMAND}`);
     }
   }

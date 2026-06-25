@@ -1,6 +1,6 @@
 {
   "name": "create-wok-server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create Wok Server project",
   "author": "Peak Tai <peaktai@qq.com>",
   "main": "index.js",
@@ -17,7 +17,8 @@
     "dist/",
     "src/",
     "templates/",
-    "build.js"
+    "build.js",
+    "README.md"
   ],
   "license": "ISC",
   "packageManager": "pnpm@10.33.0",

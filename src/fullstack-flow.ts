@@ -47,6 +47,9 @@ export async function runFullstackFlow(
       if (!usePnpm && src.endsWith('pnpm-lock.yaml')) {
         return false;
       }
+      if (src.endsWith('AGENTS.md')) {
+        return false;
+      }
       return true;
     }
   });
@@ -57,10 +60,16 @@ export async function runFullstackFlow(
   // 安装 AI 技能
   if (installSkills) {
     console.log(`\n${t.installingSkills}`);
+    let allSuccess = true;
     for (const cmd of SKILLS_COMMANDS) {
       if (!runCommand(cmd, projectPath)) {
         console.warn(`${t.installSkillsFailed}: ${cmd}`);
+        allSuccess = false;
       }
+    }
+    if (allSuccess) {
+      // 安装技能成功后，复制 AGENTS.md
+      await copy(join(templateRoot, 'AGENTS.md'), join(projectPath, 'AGENTS.md'));
     }
   }
 
